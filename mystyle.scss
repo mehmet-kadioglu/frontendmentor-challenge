@@ -1,0 +1,231 @@
+$pTextSize: 18px;
+
+//primary
+$lightRed: hsl(0, 100%, 67%);
+$orangeYellow: hsl(39, 100%, 56%);
+$greenTeal: hsl(166, 100%, 37%);
+$cobaltBlue: hsl(234, 85%, 45%);
+
+//gradients
+$backSlateBlue: hsl(252, 100%, 67%);
+$backRoyalBlue: hsl(241, 81%, 54%);
+
+$violetBlue: hsla(256, 72%, 46%, 1);
+$persianBlue: hsla(241, 72%, 46%, 0);
+
+$transparent: rgba(0,0,0,0.1);
+
+$notimp: #8d8f9b;
+
+//neutral
+$white: hsl(0, 0%, 100%);
+$paleBlue: hsl(221, 100%, 96%);
+$lightLavender: hsl(241, 100%, 89%);
+$darkGrayBlue: hsl(224, 30%, 27%);
+
+@font-face {
+    font-family: 'normal';
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'medium';
+    src: url('assets/fonts/static/HankenGrotesk-Medium.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'bold';
+    src: url('assets/fonts/static/HankenGrotesk-Bold.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'extrabold';
+    src: url('assets/fonts/static/HankenGrotesk-ExtraBold.ttf') format('truetype')
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'normal';
+}
+
+.result-container {
+    background-image: linear-gradient($backSlateBlue, $backRoyalBlue);
+    border-radius: 25px;
+    height: 70%;
+    width: 18%;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-header {
+    color: $lightLavender;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.result-numbered-container {
+    background-image: linear-gradient(to bottom, $violetBlue, $transparent);
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.result-numbered {
+    margin-top: 17%;
+    font-size: 65px;
+    font-family: bold;
+    color: $white;
+}
+
+.result-persentile {
+    color: $notimp;
+    margin-top: -50%;
+    font-family: bold;
+}
+
+.result-text-container {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.result-text-header {
+    color: $white;
+    font-family: bold;
+    font-size: 25px;
+}
+
+.result-text-desc {
+    margin-top: -10px;
+    color: $lightLavender;
+}
+
+.summary-container {
+    background-color: $white;
+    box-shadow: 10px 10px 10px whitesmoke;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 70%;
+    width: 18%;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.summary-header {
+    font-size: 22px;
+    font-family: bold;
+    margin-bottom: 6%;
+    padding-top: 18%;
+}
+
+.summary-results-container {
+    display: flex;
+    height: 55%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary-result-container {
+    background-color: $violetBlue;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 15px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.summary-img {
+    margin-right: 8px;
+    margin-left: 4%;
+}
+
+.summary-result-header {
+    margin-right: auto;
+    font-family: bold;
+}
+
+.summary-result-persentile {
+    margin-right: 13px;
+    color: $notimp;
+    font-family: bold;
+}
+
+.summary-result-value {
+    margin-right: 3%;
+    font-family: bold;
+}
+
+.continue {
+    transition: 0.5s;
+    width: 100%;
+    height: 45px;
+    color: $white;
+    font-size: 14px;
+    font-family: bold;
+    border: 0;
+    background-color: $darkGrayBlue;
+    border-radius: 25px;
+    margin-top: 6%;
+}
+
+.continue:hover {
+    transition: 0.5s;
+    background-image: linear-gradient($backSlateBlue, $backRoyalBlue);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: $darkGrayBlue;
+}
+
+
+/* Media query for mobile devices */
+@media (max-width: 375px) {
+    main {
+        display: block;
+        height: auto;
+        width: auto;
+    }
+
+    .result-container {
+        width: auto;
+        border-radius: 0;
+        border-bottom-left-radius: 10%;
+        border-bottom-right-radius: 10%;
+    }
+    
+    .summary-container {
+        width: auto;
+        border-radius: 0;
+    }
+
+    .result-header {
+        margin-top: 5%;
+    }
+
+    .continue {
+        margin-bottom: 10%;
+    }
+
+    .attribution {
+        display: none;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Hanken+Grotesk">
+  <title>Frontend Mentor | Results summary component</title>
+  <link rel="stylesheet" href="mystyle.css">
+
+</head>
+
+<body>
+  <main>
+    <div class="result-container">
+      <header class="result-header">Your Result</header>
+      <div class="result-numbered-container">
+        <p class="result-numbered">76</p>
+        <p class="result-persentile">of 100</p>
+      </div>
+
+      <div class="result-text-container">
+        <p class="result-text-header">Great</p>
+        <p class="result-text-desc">You scored higher than 65% of the people who have taken these tests.</p>
+      </div>
+    </div>
+
+    <div class="summary-container">
+      <header class="summary-header">Summary</header>
+
+      <div class="summary-results-container">
+        <div class="summary-result-container" style="background-color: #fff6f5;">
+          <img id="first-img" class="summary-img" src="" alt="reaction-img" />
+          <span id="first-header" style="color: #be878a;" class="summary-result-header">...</span>
+          <span id="first-value" class="summary-result-value">...</span>
+          <span class="summary-result-persentile">/ 100</span>
+        </div>
+
+        <div class="summary-result-container" style="background-color: #fffbf2;">
+          <img id="second-img" class="summary-img" src="" alt="memory-img" />
+          <span id="second-header" style="color: #c5ab4a;" class="summary-result-header">...</span>
+          <span id="second-value" class="summary-result-value">...</span>
+          <span class="summary-result-persentile">/ 100</span>
+        </div>
+
+        <div class="summary-result-container" style="background-color: #f5f9fc;">
+          <img id="third-img" class="summary-img" src="" alt="verbal-img" />
+          <span id="third-header" style="color: #64a899;" class="summary-result-header">...</span>
+          <span id="third-value" class="summary-result-value">...</span>
+          <span class="summary-result-persentile">/ 100</span>
+        </div>
+
+        <div class="summary-result-container" style="background-color: #f3f3fd;">
+          <img id="fourth-img" class="summary-img" src="" alt="visual-img" />
+          <span id="fourth-header" style="color: #424578;" class="summary-result-header">...</span>
+          <span id="fourth-value" class="summary-result-value">...</span>
+          <span class="summary-result-persentile">/ 100</span>
+        </div>
+      </div>
+
+      <button class="continue">Continue</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="attribution">
+      Coded by <a href="#">somebody</a>.
+    </div>
+  </footer>
+
+</body>
+
+<script>
+  fetch('data.json')
+    .then((res) => res.json())
+    .then((jsonArr) => {
+      const items = document.querySelectorAll('.summary-result-container');
+
+      for (let i = 0; i < items.length; i++) {
+        items[i].querySelector('img').src = jsonArr[i].icon;
+        items[i].querySelector('span.summary-result-header').innerText = jsonArr[i].category;
+        items[i].querySelector('.summary-result-value').innerText = jsonArr[i].score;
+      }
+    })
+    .catch(error => alert(error))
+</script>
+
+</html>
